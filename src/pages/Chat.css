@@ -1,0 +1,48 @@
+.chat {
+  padding: 1.5rem;
+  background: #101018;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat h2 {
+  margin-bottom: 1rem;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #444;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #e62429;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff2f3a;
+}
