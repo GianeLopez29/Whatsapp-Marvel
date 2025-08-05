@@ -10,38 +10,49 @@ export default function Chat() {
   return (
     <div style={{ padding: '1rem', background: '#0f0f1a', minHeight: '100vh' }}>
       <h2>Chat con personaje #{userId}</h2>
-
+      
       <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.5rem',
+        maxHeight: '70vh',
+        overflowY: 'auto',
         padding: '1rem',
-        border: '1px solid #333',
-        borderRadius: '8px',
-        marginBottom: '1rem',
-        maxHeight: '60vh',
-        overflowY: 'auto'
-      }}>
+        background: '#1e1e2e',
+        borderRadius: '8px'
+        }}>
         {(messages[userId] || []).map((msg, i) => (
-          <p key={i} style={{ color: msg.from === 'bot' ? '#00cfff' : '#fff' }}>
-            <strong>{msg.from === 'bot' ? 'MarvelBot' : 'Tú'}:</strong> {msg.text}
-          </p>
-        ))}
-      </div>
+          <div
+          key={i}
+          style={{
+            alignSelf: msg.from === 'bot' ? 'flex-start' : 'flex-end',
+            background: msg.from === 'bot' ? '#2c2c3c' : '#e62429',
+            color: msg.from === 'bot' ? '#ccc' : '#fff',
+            padding: '0.5rem 1rem',
+            borderRadius: '15px',
+            maxWidth: '75%',
+            wordWrap: 'break-word'
+            }}>
+            {msg.text}
+            </div>
+            ))}
+    </div>
 
       <MessageForm userId={userId} />
-
-      <div style={{ marginTop: '1.5rem' }}>
-        <Link
-          to="/"
-          style={{
-            padding: '0.5rem 1rem',
-            background: '#555',
-            color: '#fff',
-            borderRadius: '5px',
-            textDecoration: 'none'
-          }}
+      <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+      <Link
+      to="/"
+      style={{
+        padding: '0.5rem 1rem',
+        background: '#333',
+        color: '#fff',
+        borderRadius: '5px',
+        display: 'inline-block'
+        }}
         >
-          ← Volver al inicio
+        ← Volver al inicio
         </Link>
-      </div>
-    </div>
-  );
+        </div>
+        </div>
+        );
 }
