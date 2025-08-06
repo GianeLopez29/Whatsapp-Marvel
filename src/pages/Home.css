@@ -1,6 +1,6 @@
 .home {
   padding: 2rem;
-  background-image: url('/marvel-bg.jpg');
+  background-image: url('/public/marvel-bg.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
