@@ -9,17 +9,20 @@ export const ChatProvider = ({ children }) => {
     "1": [
       "Soy Iron Man. ¿Te puedo ayudar con algo?",
       "Mi traje está más avanzado que nunca.",
-      "¿Jarvis? ¡Ya no lo uso!"
+      "¿Jarvis? ¡Ya no lo uso!",
+      "no soy solo un superhéroe, soy un genio, millonario, playboy y filántropo."
     ],
     "2": [
       "¡Hola! Soy el Capitán América.",
+      "¿Te puedo ayudar con algo soldado?",
       "Los valores importan más que nunca.",
-      "¿Estás listo para luchar por la justicia?"
+      "¿Estás listo para luchar por la justicia?",
     ],
     "3": [
       "Black Widow al habla.",
       "El sigilo es parte de mi entrenamiento.",
-      "¿Confías en mí?"
+      "¿Confías en mí?",
+      "No subestimes el poder de una mujer vengadora.",
     ]
   };
 
