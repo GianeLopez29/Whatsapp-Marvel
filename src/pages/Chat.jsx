@@ -8,9 +8,10 @@ export default function Chat() {
   const { messages } = useContext(ChatContext);
 
   return (
-    <div style={{ padding: '1rem', background: '#0f0f1a', minHeight: '100vh' }}>
-      <h2>Chat con personaje #{userId}</h2>
+    <div style={{ padding: '1rem', maxWidth: '600px', margin: '0 auto' }}>
+      <h2>Chateando con {userId}</h2>
       
+      <div className="container">
       <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -22,37 +23,27 @@ export default function Chat() {
         borderRadius: '8px'
         }}>
         {(messages[userId] || []).map((msg, i) => (
-          <div
-          key={i}
-          style={{
-            alignSelf: msg.from === 'bot' ? 'flex-start' : 'flex-end',
-            background: msg.from === 'bot' ? '#2c2c3c' : '#e62429',
-            color: msg.from === 'bot' ? '#ccc' : '#fff',
-            padding: '0.5rem 1rem',
-            borderRadius: '15px',
-            maxWidth: '75%',
-            wordWrap: 'break-word'
-            }}>
-            {msg.text}
-            </div>
-            ))}
-    </div>
-
-      <MessageForm userId={userId} />
-      <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
-      <Link
-      to="/"
-      style={{
-        padding: '0.5rem 1rem',
-        background: '#333',
-        color: '#fff',
-        borderRadius: '5px',
-        display: 'inline-block'
-        }}
-        >
-        ← Volver al inicio
-        </Link>
+          <div key={i} className={`bubble ${msg.from}`}>
+          {msg.text}
+          </div>
+          ))}
         </div>
+        </div>
+        <MessageForm userId={userId} />
+        <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+        <Link
+        to="/"
+        style={{
+          padding: '0.5rem 1rem',
+          background: '#333',
+          color: '#fff',
+          borderRadius: '5px',
+          display: 'inline-block'
+          }}
+          >
+          ← Volver al inicio
+          </Link>
+          </div>
         </div>
         );
 }
